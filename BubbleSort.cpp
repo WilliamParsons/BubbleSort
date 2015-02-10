@@ -14,25 +14,38 @@ int main(void)
 	char *mediary = NULL;
 	int temp = 0;
 	int count = 0;
-	ifstream myInputFile;
+	vector<int> values;
+	char comma;
+	int value;
+		ifstream myInputFile;
 	myInputFile.open("input.txt");
 	if (myInputFile.is_open())
 	{
-		while (myInputFile.good())
+		myInputFile >> value;
+	
+	
+		if( myInputFile )
 		{
-				temp = myInputFile.get();
-				*mediary = char(temp);
-				if(temp != ',')
-				{
-				
-				arrayOfValues[i] = atoi(mediary);
-				cout<<arrayOfValues[i];
-				i++;
-				count++;
-				}
+			values.push_back( value );
+    			while( myInputFile >> comma >> value && comma == ',' )
+    			{	
+			values.push_back( value );
+		 	}
 		}
-		myInputFile.close();
-	}
+
+	// 			temp = myInputFile.get();
+	// 			*mediary = char(temp);
+	// 			if(temp != ',')
+	// 			{
+				
+	// 			arrayOfValues[i] = atoi(mediary);
+	// 			cout<<arrayOfValues[i];
+	// 			i++;
+	// 			count++;
+	// 			}
+	// 	}
+	// 	myInputFile.close();
+	// }
 
 	else cout << "Unable to open file"; 
 
