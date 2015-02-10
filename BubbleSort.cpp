@@ -44,8 +44,8 @@ int main(void)
 	// 			count++;
 	// 			}
 	// 	}
-	// 	myInputFile.close();
-	// }
+	 	myInputFile.close();
+	}
 
 	else cout << "Unable to open file"; 
 
